@@ -4,7 +4,10 @@
     "confianza_minima": 0.4,
     "camara_index": 0,
     "fps_objetivo": 30,
-    "resolucion_camara": [640, 480],
+    "resolucion_camara": [
+        640,
+        480
+    ],
     "procesar_cada_n_frames": 3,
     "nivel_logging": "INFO",
     "limpiar_visitas_automaticamente": true,

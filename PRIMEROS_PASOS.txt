@@ -1,0 +1,51 @@
+=================================================================
+               SISTEMA BARRIO SEGURO - INFORMACIÓN
+=================================================================
+
+📋 PRIMEROS PASOS:
+
+1. 🚀 EJECUTAR EL SISTEMA:
+   python main.py
+
+2. 👤 REGISTRAR VECINOS:
+   - Seleccionar opción 2 en el menú principal
+   - Elegir "Registrar vecino (cámara)" o "desde archivo"
+   - Seguir las instrucciones en pantalla
+
+3. 🎥 INICIAR RECONOCIMIENTO:
+   - Seleccionar opción 1 en el menú principal
+   - Presionar 'q' para salir del reconocimiento
+   - Presionar 'r' para registro rápido durante reconocimiento
+
+📊 FUNCIONALIDADES DISPONIBLES:
+
+• Reconocimiento facial en tiempo real
+• Gestión completa de vecinos
+• Control automático de visitas
+• Análisis estadístico de accesos
+• Configuración personalizable
+• Exportación de reportes
+
+⚙️ CONFIGURACIÓN:
+
+• Archivo config.json para ajustes
+• Tolerancia de reconocimiento ajustable
+• Configuración de cámara personalizable
+• Tiempo de visitas configurable
+
+🔧 SOLUCIÓN DE PROBLEMAS:
+
+• Si la cámara no funciona: verificar índice en config.json
+• Si el reconocimiento es impreciso: ajustar tolerancia
+• Para mejor rendimiento: modificar procesar_cada_n_frames
+
+📁 ESTRUCTURA DE ARCHIVOS:
+
+dataset/vecinos/     - Fotos de vecinos registrados
+dataset/visitas/     - Fotos temporales de visitas  
+registros/          - Base de datos y logs
+config.json         - Configuración del sistema
+
+=================================================================
+Para soporte técnico, revisar el archivo README.md
+=================================================================
