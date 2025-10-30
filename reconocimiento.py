@@ -2,9 +2,6 @@
 Módulo de Reconocimiento Facial - Sistema Barrio Seguro
 =======================================================
 Motor principal de reconocimiento facial en tiempo real con manejo de visitas.
-
-Autor: Sistema Barrio Seguro
-Fecha: 23/10/2025
 """
 
 import cv2
@@ -26,17 +23,10 @@ from utils import (
 
 
 class SistemaReconocimiento:
-    """
-    Sistema principal de reconocimiento facial en tiempo real.
-    """
+    """Sistema principal de reconocimiento facial en tiempo real."""
     
     def __init__(self, config: Dict[str, Any] = None):
-        """
-        Inicializa el sistema de reconocimiento.
-        
-        Args:
-            config (Dict): Configuración del sistema
-        """
+        """Inicializa el sistema de reconocimiento."""
         self.config = config or cargar_configuracion()
         self.db = BaseDatos()
         
@@ -70,12 +60,7 @@ class SistemaReconocimiento:
         logging.info("Sistema de reconocimiento inicializado")
     
     def cargar_vecinos_conocidos(self) -> bool:
-        """
-        Precarga todos los vecinos conocidos para acelerar el reconocimiento.
-        
-        Returns:
-            bool: True si se cargaron exitosamente
-        """
+        """Precarga todos los vecinos conocidos en memoria."""
         try:
             print("🔄 Cargando vecinos conocidos...")
             
@@ -97,9 +82,7 @@ class SistemaReconocimiento:
             return False
     
     def cargar_visitas_temporales(self):
-        """
-        Carga las visitas temporales activas desde la base de datos.
-        """
+        """Carga las visitas temporales activas desde la base de datos."""
         try:
             visitas_db = self.db.obtener_visitas_temporales_activas()
             
@@ -132,12 +115,7 @@ class SistemaReconocimiento:
             logging.error(f"Error al cargar visitas temporales: {e}")
     
     def inicializar_camara(self) -> bool:
-        """
-        Inicializa y configura la cámara.
-        
-        Returns:
-            bool: True si se inicializó correctamente
-        """
+        """Inicializa y configura la cámara."""
         try:
             indice_camara = self.config.get('camara_index', 0)
             print(f"📹 Inicializando cámara (índice: {indice_camara})...")
@@ -166,15 +144,7 @@ class SistemaReconocimiento:
             return False
     
     def reconocer_persona(self, encoding_cara) -> Tuple[Optional[str], bool, float]:
-        """
-        Reconoce una persona comparando con encodings conocidos.
-        
-        Args:
-            encoding_cara: Encoding facial a comparar
-            
-        Returns:
-            Tuple[Optional[str], bool, float]: (nombre, es_vecino, distancia)
-        """
+        """Reconoce una persona comparando con encodings conocidos."""
         try:
             # Primero verificar vecinos conocidos
             if self.encodings_vecinos:
@@ -210,17 +180,7 @@ class SistemaReconocimiento:
             return None, False, 1.0
     
     def procesar_nueva_visita(self, encoding_cara, frame, ubicacion_cara) -> str:
-        """
-        Procesa una nueva visita no reconocida.
-        
-        Args:
-            encoding_cara: Encoding facial de la visita
-            frame: Frame actual de la cámara
-            ubicacion_cara: Ubicación de la cara en el frame
-            
-        Returns:
-            str: Nombre asignado a la visita
-        """
+        """Procesa y registra una nueva visita no reconocida."""
         try:
             # Generar nombre único para la visita
             nombre_archivo = generar_nombre_archivo_visita()
@@ -261,13 +221,7 @@ class SistemaReconocimiento:
             return "Visita_Error"
     
     def actualizar_ultimo_acceso(self, nombre: str, es_vecino: bool):
-        """
-        Actualiza el registro del último acceso de una persona.
-        
-        Args:
-            nombre (str): Nombre de la persona
-            es_vecino (bool): True si es vecino, False si es visita
-        """
+        """Registra el acceso de una persona evitando spam."""
         try:
             ahora = datetime.now()
             
@@ -293,9 +247,7 @@ class SistemaReconocimiento:
             logging.error(f"Error al actualizar acceso: {e}")
     
     def limpiar_visitas_expiradas(self):
-        """
-        Limpia visitas que han excedido el tiempo límite.
-        """
+        """Limpia visitas que han excedido el tiempo límite."""
         try:
             ahora = datetime.now()
             visitas_a_eliminar = []
@@ -329,12 +281,7 @@ class SistemaReconocimiento:
             logging.error(f"Error al limpiar visitas: {e}")
     
     def mostrar_estadisticas_sesion(self, frame):
-        """
-        Muestra estadísticas de la sesión actual en el frame.
-        
-        Args:
-            frame: Frame donde mostrar las estadísticas
-        """
+        """Dibuja las estadísticas de la sesión en el frame."""
         try:
             # Información de sesión
             tiempo_sesion = formatear_tiempo_transcurrido(self.inicio_sesion)
@@ -363,9 +310,7 @@ class SistemaReconocimiento:
             logging.error(f"Error al mostrar estadísticas: {e}")
     
     def iniciar_reconocimiento(self):
-        """
-        Inicia el sistema de reconocimiento en tiempo real.
-        """
+        """Inicia el loop principal de reconocimiento en tiempo real."""
         try:
             print("\n🚀 INICIANDO SISTEMA DE RECONOCIMIENTO")
             print("=" * 60)
@@ -474,9 +419,7 @@ class SistemaReconocimiento:
             self.finalizar_sistema()
     
     def modo_registro_rapido(self):
-        """
-        Modo rápido de registro de vecino durante el reconocimiento.
-        """
+        """Permite registrar un vecino sin salir del reconocimiento."""
         try:
             cv2.destroyAllWindows()
             
@@ -502,9 +445,7 @@ class SistemaReconocimiento:
             print(f"❌ Error en registro rápido: {e}")
     
     def finalizar_sistema(self):
-        """
-        Finaliza el sistema de reconocimiento de forma segura.
-        """
+        """Finaliza el sistema de forma segura y muestra resumen."""
         try:
             if self.camara:
                 self.camara.release()
@@ -528,9 +469,7 @@ class SistemaReconocimiento:
 
 
 def main():
-    """
-    Función principal para ejecutar el sistema de reconocimiento.
-    """
+    """Función principal para ejecutar el sistema de reconocimiento."""
     try:
         # Configurar logging
         configurar_logging()

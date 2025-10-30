@@ -3,9 +3,6 @@ Sistema de Base de Datos para Barrio Seguro
 ===========================================
 Módulo para manejar la base de datos SQLite del sistema de reconocimiento facial.
 Gestiona vecinos, accesos y visitas del barrio privado.
-
-Autor: Sistema Barrio Seguro
-Fecha: 23/10/2025
 """
 
 import sqlite3
@@ -17,24 +14,15 @@ import logging
 
 
 class BaseDatos:
-    """
-    Clase para manejar todas las operaciones de base de datos.
-    """
+    """Clase para manejar todas las operaciones de base de datos."""
     
     def __init__(self, db_path: str = "registros/accesos.db"):
-        """
-        Inicializa la conexión a la base de datos.
-        
-        Args:
-            db_path (str): Ruta al archivo de base de datos
-        """
+        """Inicializa la conexión a la base de datos."""
         self.db_path = db_path
         self.crear_tablas()
         
     def crear_tablas(self):
-        """
-        Crea las tablas necesarias si no existen.
-        """
+        """Crea las tablas necesarias si no existen."""
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -82,17 +70,7 @@ class BaseDatos:
             raise
     
     def registrar_vecino(self, nombre: str, ruta_imagen: str, encoding) -> bool:
-        """
-        Registra un nuevo vecino en la base de datos.
-        
-        Args:
-            nombre (str): Nombre del vecino
-            ruta_imagen (str): Ruta a la imagen del vecino
-            encoding: Codificación facial del vecino
-            
-        Returns:
-            bool: True si se registró correctamente
-        """
+        """Registra un nuevo vecino en la base de datos."""
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -117,12 +95,7 @@ class BaseDatos:
             return False
     
     def obtener_vecinos_activos(self) -> List[Tuple]:
-        """
-        Obtiene todos los vecinos activos.
-        
-        Returns:
-            List[Tuple]: Lista de tuplas (id, nombre, encoding)
-        """
+        """Obtiene todos los vecinos activos de la base de datos."""
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -145,18 +118,7 @@ class BaseDatos:
     
     def registrar_acceso(self, nombre: str, tipo_persona: str, tipo_evento: str, 
                         ruta_imagen: str = None) -> bool:
-        """
-        Registra un acceso en la base de datos.
-        
-        Args:
-            nombre (str): Nombre de la persona
-            tipo_persona (str): 'vecino' o 'visita'
-            tipo_evento (str): 'entrada' o 'salida'
-            ruta_imagen (str): Ruta a la imagen (opcional)
-            
-        Returns:
-            bool: True si se registró correctamente
-        """
+        """Registra un evento de acceso en la base de datos."""
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -175,16 +137,7 @@ class BaseDatos:
             return False
     
     def registrar_visita_temporal(self, nombre_archivo: str, encoding) -> bool:
-        """
-        Registra una visita temporal.
-        
-        Args:
-            nombre_archivo (str): Nombre del archivo de imagen
-            encoding: Codificación facial
-            
-        Returns:
-            bool: True si se registró correctamente
-        """
+        """Registra una visita temporal en el sistema."""
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -204,12 +157,7 @@ class BaseDatos:
             return False
     
     def obtener_visitas_temporales_activas(self) -> List[Tuple]:
-        """
-        Obtiene todas las visitas temporales activas.
-        
-        Returns:
-            List[Tuple]: Lista de tuplas (id, nombre_archivo, encoding, fecha_entrada)
-        """
+        """Obtiene todas las visitas temporales activas."""
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -232,15 +180,7 @@ class BaseDatos:
             return []
     
     def desactivar_visita_temporal(self, id_visita: int) -> bool:
-        """
-        Desactiva una visita temporal.
-        
-        Args:
-            id_visita (int): ID de la visita
-            
-        Returns:
-            bool: True si se desactivó correctamente
-        """
+        """Desactiva una visita temporal."""
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -259,12 +199,7 @@ class BaseDatos:
             return False
     
     def obtener_estadisticas_accesos(self) -> Dict[str, Any]:
-        """
-        Obtiene estadísticas de accesos.
-        
-        Returns:
-            Dict: Diccionario con estadísticas
-        """
+        """Obtiene estadísticas generales de accesos del sistema."""
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -321,15 +256,7 @@ class BaseDatos:
             return {}
     
     def buscar_vecino_por_nombre(self, nombre: str) -> Optional[Tuple]:
-        """
-        Busca un vecino por nombre.
-        
-        Args:
-            nombre (str): Nombre del vecino
-            
-        Returns:
-            Optional[Tuple]: Información del vecino o None
-        """
+        """Busca un vecino por su nombre."""
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -346,15 +273,7 @@ class BaseDatos:
             return None
     
     def eliminar_vecino(self, nombre: str) -> bool:
-        """
-        Desactiva un vecino (eliminación lógica).
-        
-        Args:
-            nombre (str): Nombre del vecino
-            
-        Returns:
-            bool: True si se desactivó correctamente
-        """
+        """Elimina un vecino del sistema marcándolo como inactivo."""
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()

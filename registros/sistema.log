@@ -4,3 +4,240 @@
 2025-10-24 22:09:28,773 - INFO - Tablas de base de datos creadas/verificadas exitosamente
 2025-10-24 22:09:56,089 - INFO - Sistema finalizado por el usuario
 2025-10-24 22:09:56,089 - INFO - Sistema Barrio Seguro finalizado
+2025-10-28 01:36:54,725 - INFO - Sistema de logging configurado
+2025-10-28 01:36:54,726 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-28 01:36:54,755 - INFO - Configuración cargada desde archivo
+2025-10-28 01:36:54,757 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-28 01:37:25,718 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-28 01:37:25,734 - INFO - Sistema de reconocimiento inicializado
+2025-10-28 01:37:25,734 - INFO - Cargados 0 vecinos conocidos
+2025-10-28 01:37:25,737 - INFO - Cargadas 0 visitas temporales
+2025-10-28 01:37:33,385 - INFO - Cámara inicializada exitosamente
+2025-10-28 01:37:34,452 - INFO - Acceso registrado: Visita_visita_2 - entrada
+2025-10-28 01:37:34,452 - INFO - Nueva visita registrada: Visita_visita_2
+2025-10-28 01:37:34,899 - INFO - Acceso registrado: Visita_visita_2 - entrada
+2025-10-28 01:37:34,899 - INFO - Acceso registrado: Visita_visita_2 (visita)
+2025-10-28 01:37:48,509 - INFO - Sistema de reconocimiento finalizado
+2025-10-28 01:38:11,583 - INFO - Sistema finalizado por el usuario
+2025-10-28 01:38:11,599 - INFO - Sistema Barrio Seguro finalizado
+2025-10-29 00:49:09,455 - INFO - Sistema de logging configurado
+2025-10-29 00:49:09,455 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-29 00:49:09,491 - INFO - Configuración cargada desde archivo
+2025-10-29 00:49:09,502 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 00:50:16,395 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 00:50:16,395 - INFO - Sistema de reconocimiento inicializado
+2025-10-29 00:50:16,395 - INFO - Cargados 0 vecinos conocidos
+2025-10-29 00:50:16,409 - INFO - Cargadas 0 visitas temporales
+2025-10-29 00:50:24,937 - INFO - Cámara inicializada exitosamente
+2025-10-29 00:50:26,058 - INFO - Acceso registrado: Visita_visita_2 - entrada
+2025-10-29 00:50:26,058 - INFO - Nueva visita registrada: Visita_visita_2
+2025-10-29 00:50:26,534 - INFO - Acceso registrado: Visita_visita_2 - entrada
+2025-10-29 00:50:26,534 - INFO - Acceso registrado: Visita_visita_2 (visita)
+2025-10-29 00:50:45,228 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-29 00:50:55,283 - WARNING - No se detectaron caras en la imagen
+2025-10-29 00:50:58,755 - INFO - Acceso registrado: Visita_visita_2 - entrada
+2025-10-29 00:50:58,755 - INFO - Acceso registrado: Visita_visita_2 (visita)
+2025-10-29 00:50:58,755 - ERROR - Error al leer frame de la cámara
+2025-10-29 00:50:59,084 - INFO - Sistema de reconocimiento finalizado
+2025-10-29 00:51:34,642 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-29 00:51:44,565 - WARNING - No se detectaron caras en la imagen
+2025-10-29 00:51:59,242 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-29 00:52:07,703 - INFO - Vecino Matias registrado exitosamente
+2025-10-29 00:52:07,719 - INFO - Vecino Matias registrado exitosamente
+2025-10-29 00:52:31,358 - INFO - Vecino Matias eliminado
+2025-10-29 00:53:14,839 - INFO - Sistema de logging configurado
+2025-10-29 00:53:14,839 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 00:54:42,627 - INFO - Sistema de logging configurado
+2025-10-29 00:54:42,627 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 00:55:09,071 - INFO - Sistema finalizado por el usuario
+2025-10-29 00:55:09,071 - INFO - Sistema Barrio Seguro finalizado
+2025-10-29 00:55:25,895 - INFO - Sistema de logging configurado
+2025-10-29 00:55:25,895 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-29 00:55:25,927 - INFO - Configuración cargada desde archivo
+2025-10-29 00:55:25,927 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 00:55:41,437 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 00:55:41,450 - INFO - Sistema de reconocimiento inicializado
+2025-10-29 00:55:41,450 - INFO - Cargados 0 vecinos conocidos
+2025-10-29 00:55:41,454 - INFO - Cargadas 1 visitas temporales
+2025-10-29 00:55:49,636 - INFO - Cámara inicializada exitosamente
+2025-10-29 00:55:50,706 - INFO - Acceso registrado: Visita_visita_2 - entrada
+2025-10-29 00:55:50,706 - INFO - Acceso registrado: Visita_visita_2 (visita)
+2025-10-29 00:56:07,184 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-29 00:56:17,903 - WARNING - El vecino Matias ya existe en la base de datos
+2025-10-29 00:56:21,345 - INFO - Acceso registrado: Visita_visita_2 - entrada
+2025-10-29 00:56:21,345 - INFO - Acceso registrado: Visita_visita_2 (visita)
+2025-10-29 00:56:21,345 - ERROR - Error al leer frame de la cámara
+2025-10-29 00:56:21,672 - INFO - Sistema de reconocimiento finalizado
+2025-10-29 00:56:34,423 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-29 00:56:41,339 - WARNING - El vecino Matias ya existe en la base de datos
+2025-10-29 00:56:50,853 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-29 00:57:16,936 - WARNING - El vecino Matias ya existe en la base de datos
+2025-10-29 00:57:40,862 - INFO - Sistema de logging configurado
+2025-10-29 00:57:40,862 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 00:59:04,750 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 00:59:04,750 - INFO - Sistema de reconocimiento inicializado
+2025-10-29 00:59:04,750 - INFO - Cargados 0 vecinos conocidos
+2025-10-29 00:59:04,750 - INFO - Cargadas 1 visitas temporales
+2025-10-29 00:59:13,024 - INFO - Cámara inicializada exitosamente
+2025-10-29 00:59:14,408 - INFO - Acceso registrado: Visita_visita_2 - entrada
+2025-10-29 00:59:14,408 - INFO - Acceso registrado: Visita_visita_2 (visita)
+2025-10-29 00:59:25,395 - INFO - Acceso registrado: Visita_visita_2 - entrada
+2025-10-29 00:59:25,395 - INFO - Nueva visita registrada: Visita_visita_2
+2025-10-29 00:59:38,224 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-29 00:59:44,579 - WARNING - El vecino Matias ya existe en la base de datos
+2025-10-29 00:59:47,634 - ERROR - Error al leer frame de la cámara
+2025-10-29 00:59:47,947 - INFO - Sistema de reconocimiento finalizado
+2025-10-29 01:01:00,268 - INFO - Sistema de logging configurado
+2025-10-29 01:01:00,268 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 01:01:13,592 - INFO - Sistema de logging configurado
+2025-10-29 01:01:13,592 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 01:01:32,467 - INFO - Sistema finalizado por el usuario
+2025-10-29 01:01:32,467 - INFO - Sistema Barrio Seguro finalizado
+2025-10-29 02:20:37,031 - INFO - Sistema de logging configurado
+2025-10-29 02:20:37,031 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-29 02:20:37,061 - INFO - Configuración cargada desde archivo
+2025-10-29 02:20:37,066 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 02:20:54,865 - INFO - Iniciando registro desde cámara para: Matias Bertoldo
+2025-10-29 02:21:05,375 - WARNING - No se detectaron caras en la imagen
+2025-10-29 02:21:15,369 - INFO - Iniciando registro desde cámara para: Matias Bertoldo
+2025-10-29 02:21:31,135 - WARNING - No se detectaron caras en la imagen
+2025-10-29 02:21:43,492 - INFO - Iniciando registro desde cámara para: Matias Bertoldo
+2025-10-29 02:21:57,871 - WARNING - No se detectaron caras en la imagen
+2025-10-29 02:22:11,714 - INFO - Iniciando registro desde cámara para: M
+2025-10-29 02:22:22,909 - INFO - Vecino M registrado exitosamente
+2025-10-29 02:22:22,909 - INFO - Vecino M registrado exitosamente
+2025-10-29 02:22:44,535 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 02:22:44,535 - INFO - Sistema de reconocimiento inicializado
+2025-10-29 02:22:44,540 - INFO - Cargados 1 vecinos conocidos
+2025-10-29 02:22:44,543 - INFO - Cargadas 2 visitas temporales
+2025-10-29 02:22:52,870 - INFO - Cámara inicializada exitosamente
+2025-10-29 02:22:54,220 - INFO - Acceso registrado: M - entrada
+2025-10-29 02:22:54,220 - INFO - Acceso registrado: M (vecino)
+2025-10-29 02:23:07,325 - INFO - Sistema de reconocimiento finalizado
+2025-10-29 02:23:47,463 - INFO - Sistema finalizado por el usuario
+2025-10-29 02:23:47,463 - INFO - Sistema Barrio Seguro finalizado
+2025-10-29 18:05:35,149 - INFO - Sistema de logging configurado
+2025-10-29 18:05:35,149 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-29 18:05:35,185 - INFO - Configuración cargada desde archivo
+2025-10-29 18:05:35,190 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 18:06:10,358 - INFO - Sistema de logging configurado
+2025-10-29 18:06:10,358 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-29 18:06:22,226 - INFO - Sistema finalizado por el usuario
+2025-10-29 18:06:22,226 - INFO - Sistema Barrio Seguro finalizado
+2025-10-30 00:03:34,855 - INFO - Sistema de logging configurado
+2025-10-30 00:03:34,855 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-30 00:03:34,894 - INFO - Configuración cargada desde archivo
+2025-10-30 00:03:34,906 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:03:52,401 - INFO - Sistema finalizado por el usuario
+2025-10-30 00:03:52,401 - INFO - Sistema Barrio Seguro finalizado
+2025-10-30 00:06:07,373 - INFO - Sistema de logging configurado
+2025-10-30 00:06:07,373 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-30 00:06:07,415 - INFO - Configuración cargada desde archivo
+2025-10-30 00:06:07,415 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:07:01,541 - INFO - Sistema finalizado por el usuario
+2025-10-30 00:07:01,541 - INFO - Sistema Barrio Seguro finalizado
+2025-10-30 00:19:39,204 - INFO - Sistema de logging configurado
+2025-10-30 00:19:39,204 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-30 00:19:39,228 - INFO - Configuración cargada desde archivo
+2025-10-30 00:19:39,228 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:19:49,762 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:19:49,762 - INFO - Sistema de reconocimiento inicializado
+2025-10-30 00:19:49,762 - INFO - Cargados 1 vecinos conocidos
+2025-10-30 00:19:49,789 - INFO - Cargadas 0 visitas temporales
+2025-10-30 00:19:58,119 - INFO - Cámara inicializada exitosamente
+2025-10-30 00:19:59,200 - INFO - Acceso registrado: M - entrada
+2025-10-30 00:19:59,200 - INFO - Acceso registrado: M (vecino)
+2025-10-30 00:20:05,495 - INFO - Acceso registrado: Visita_visita_2 - entrada
+2025-10-30 00:20:05,495 - INFO - Nueva visita registrada: Visita_visita_2
+2025-10-30 00:20:19,782 - INFO - Iniciando registro desde cámara para: M
+2025-10-30 00:20:19,786 - WARNING - El vecino M ya está registrado
+2025-10-30 00:20:30,517 - INFO - Iniciando registro desde cámara para: Mati
+2025-10-30 00:20:36,443 - INFO - Vecino Mati registrado exitosamente
+2025-10-30 00:20:36,443 - INFO - Vecino Mati registrado exitosamente
+2025-10-30 00:20:36,458 - INFO - Cargados 2 vecinos conocidos
+2025-10-30 00:20:39,502 - ERROR - Error al leer frame de la cámara
+2025-10-30 00:20:39,838 - INFO - Sistema de reconocimiento finalizado
+2025-10-30 00:20:57,966 - INFO - Sistema de logging configurado
+2025-10-30 00:20:57,966 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:21:13,785 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:21:13,785 - INFO - Sistema de reconocimiento inicializado
+2025-10-30 00:21:13,789 - INFO - Cargados 2 vecinos conocidos
+2025-10-30 00:21:13,790 - INFO - Cargadas 1 visitas temporales
+2025-10-30 00:21:22,297 - INFO - Cámara inicializada exitosamente
+2025-10-30 00:21:23,745 - INFO - Acceso registrado: Mati - entrada
+2025-10-30 00:21:23,745 - INFO - Acceso registrado: Mati (vecino)
+2025-10-30 00:21:26,053 - INFO - Sistema de reconocimiento finalizado
+2025-10-30 00:22:13,942 - INFO - Sistema de logging configurado
+2025-10-30 00:22:13,942 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:23:03,302 - INFO - Sistema finalizado por el usuario
+2025-10-30 00:23:03,302 - INFO - Sistema Barrio Seguro finalizado
+2025-10-30 00:30:55,585 - INFO - Sistema de logging configurado
+2025-10-30 00:30:55,585 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-30 00:30:55,630 - INFO - Configuración cargada desde archivo
+2025-10-30 00:30:55,638 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:33:41,659 - INFO - Sistema de logging configurado
+2025-10-30 00:33:41,659 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:34:58,755 - INFO - Sistema de logging configurado
+2025-10-30 00:34:58,755 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:36:00,386 - INFO - Sistema de logging configurado
+2025-10-30 00:36:00,386 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:37:09,957 - INFO - Sistema finalizado por el usuario
+2025-10-30 00:37:09,957 - INFO - Sistema Barrio Seguro finalizado
+2025-10-30 00:45:11,082 - INFO - Sistema de logging configurado
+2025-10-30 00:45:11,082 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-30 00:46:32,376 - INFO - Sistema de logging configurado
+2025-10-30 00:46:32,376 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-30 00:46:32,413 - INFO - Configuración cargada desde archivo
+2025-10-30 00:46:32,413 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:46:43,665 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:46:43,665 - INFO - Sistema de reconocimiento inicializado
+2025-10-30 00:46:43,681 - INFO - Cargados 2 vecinos conocidos
+2025-10-30 00:46:43,687 - INFO - Cargadas 1 visitas temporales
+2025-10-30 00:46:51,318 - INFO - Cámara inicializada exitosamente
+2025-10-30 00:46:52,394 - INFO - Acceso registrado: Mati - entrada
+2025-10-30 00:46:52,394 - INFO - Acceso registrado: Mati (vecino)
+2025-10-30 00:47:04,846 - INFO - Sistema de reconocimiento finalizado
+2025-10-30 00:47:25,154 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-30 00:47:31,526 - WARNING - No se detectaron caras en la imagen
+2025-10-30 00:47:40,885 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-30 00:47:47,664 - WARNING - El vecino Matias ya existe en la base de datos
+2025-10-30 00:48:29,792 - INFO - Limpieza de datos: 12 registros eliminados
+2025-10-30 00:48:45,460 - INFO - Sistema finalizado por el usuario
+2025-10-30 00:48:45,460 - INFO - Sistema Barrio Seguro finalizado
+2025-10-30 00:48:50,094 - INFO - Sistema de logging configurado
+2025-10-30 00:48:50,094 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-30 00:48:50,120 - INFO - Configuración cargada desde archivo
+2025-10-30 00:48:50,121 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 00:49:04,279 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-30 00:49:13,162 - WARNING - No se detectaron caras en la imagen
+2025-10-30 00:49:20,228 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-30 00:49:25,947 - WARNING - El vecino Matias ya existe en la base de datos
+2025-10-30 00:49:52,998 - INFO - Sistema finalizado por el usuario
+2025-10-30 00:49:52,998 - INFO - Sistema Barrio Seguro finalizado
+2025-10-30 13:29:13,438 - INFO - Sistema de logging configurado
+2025-10-30 13:29:13,438 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-30 13:29:13,489 - INFO - Configuración cargada desde archivo
+2025-10-30 13:29:13,500 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 13:29:55,045 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-30 13:30:10,687 - WARNING - El vecino Matias ya existe en la base de datos
+2025-10-30 13:30:46,862 - INFO - Sistema finalizado por el usuario
+2025-10-30 13:30:46,862 - INFO - Sistema Barrio Seguro finalizado
+2025-10-30 13:45:02,452 - INFO - Sistema de logging configurado
+2025-10-30 13:45:02,452 - INFO - Iniciando Sistema Barrio Seguro
+2025-10-30 13:45:02,497 - INFO - Configuración cargada desde archivo
+2025-10-30 13:45:02,499 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 13:45:22,940 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-30 13:45:34,126 - WARNING - No se detectaron caras en la imagen
+2025-10-30 13:45:43,505 - INFO - Iniciando registro desde cámara para: Matias
+2025-10-30 13:46:00,492 - INFO - Vecino Matias registrado exitosamente
+2025-10-30 13:46:00,492 - INFO - Vecino Matias registrado exitosamente
+2025-10-30 13:46:20,175 - INFO - Tablas de base de datos creadas/verificadas exitosamente
+2025-10-30 13:46:20,175 - INFO - Sistema de reconocimiento inicializado
+2025-10-30 13:46:20,175 - INFO - Cargados 3 vecinos conocidos
+2025-10-30 13:46:20,193 - INFO - Cargadas 0 visitas temporales
+2025-10-30 13:46:28,547 - INFO - Cámara inicializada exitosamente
+2025-10-30 13:46:29,874 - INFO - Acceso registrado: Matias - entrada
+2025-10-30 13:46:29,874 - INFO - Acceso registrado: Matias (vecino)
+2025-10-30 13:46:38,184 - INFO - Sistema de reconocimiento finalizado
+2025-10-30 13:46:41,140 - INFO - Sistema finalizado por el usuario
+2025-10-30 13:46:41,140 - INFO - Sistema Barrio Seguro finalizado
