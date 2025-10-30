@@ -1,0 +1,203 @@
+{
+    "metadata": {
+        "fecha_generacion": "2025-10-29T00:54:35.134375",
+        "sistema": "Barrio Seguro - Control de Acceso",
+        "version": "1.0"
+    },
+    "estadisticas_generales": {
+        "total_vecinos": 0,
+        "total_accesos": 15,
+        "accesos_hoy": 3,
+        "accesos_semana": 15,
+        "primer_acceso": "2025-10-25 00:57:33",
+        "ultimo_acceso": "2025-10-29 03:50:58",
+        "estadisticas_db": {
+            "accesos_por_tipo": [
+                [
+                    "vecino",
+                    "entrada",
+                    4
+                ],
+                [
+                    "vecino",
+                    "salida",
+                    2
+                ],
+                [
+                    "visita",
+                    "entrada",
+                    7
+                ],
+                [
+                    "visita",
+                    "salida",
+                    2
+                ]
+            ],
+            "accesos_por_hora": [
+                [
+                    "04",
+                    7
+                ],
+                [
+                    "00",
+                    5
+                ],
+                [
+                    "03",
+                    3
+                ]
+            ],
+            "vecinos_activos": [
+                [
+                    "Nicolas Cuadrado",
+                    4
+                ],
+                [
+                    "Maria Perez",
+                    2
+                ]
+            ],
+            "accesos_por_dia": [
+                [
+                    "2025-10-29",
+                    3,
+                    3
+                ],
+                [
+                    "2025-10-28",
+                    7,
+                    4
+                ],
+                [
+                    "2025-10-25",
+                    5,
+                    2
+                ]
+            ]
+        }
+    },
+    "analisis_horas_pico": {
+        "accesos_por_hora": {
+            "4": {
+                "total": 7,
+                "vecinos": 3,
+                "visitas": 4
+            },
+            "0": {
+                "total": 5,
+                "vecinos": 3,
+                "visitas": 2
+            },
+            "3": {
+                "total": 3,
+                "vecinos": 0,
+                "visitas": 3
+            }
+        },
+        "hora_pico": {
+            "hora": "04:00",
+            "total_accesos": 7,
+            "vecinos": 3,
+            "visitas": 4
+        },
+        "hora_valle": {
+            "hora": "03:00",
+            "total_accesos": 3,
+            "vecinos": 0,
+            "visitas": 3
+        },
+        "franjas_horarias": {
+            "mañana (6-12h)": 0,
+            "tarde (12-18h)": 0,
+            "noche (18-24h)": 0,
+            "madrugada (0-6h)": 15
+        }
+    },
+    "analisis_visitas_diarias": {
+        "datos_diarios": [
+            {
+                "fecha": "2025-10-29",
+                "total_accesos": 3,
+                "vecinos": 0,
+                "visitas": 3,
+                "personas_unicas": 1
+            },
+            {
+                "fecha": "2025-10-28",
+                "total_accesos": 7,
+                "vecinos": 3,
+                "visitas": 4,
+                "personas_unicas": 4
+            },
+            {
+                "fecha": "2025-10-25",
+                "total_accesos": 5,
+                "vecinos": 3,
+                "visitas": 2,
+                "personas_unicas": 3
+            }
+        ],
+        "resumen": {
+            "dias_analizados": 3,
+            "total_visitas": 9,
+            "total_accesos": 15,
+            "dias_con_visitas": 3,
+            "promedio_visitas_dia": 3.0,
+            "promedio_accesos_dia": 5.0
+        },
+        "extremos": {
+            "dia_mas_visitas": {
+                "fecha": "2025-10-28",
+                "total_accesos": 7,
+                "vecinos": 3,
+                "visitas": 4,
+                "personas_unicas": 4
+            },
+            "dia_menos_visitas": {
+                "fecha": "2025-10-25",
+                "total_accesos": 5,
+                "vecinos": 3,
+                "visitas": 2,
+                "personas_unicas": 3
+            }
+        }
+    },
+    "analisis_vecinos_activos": {
+        "vecinos_mas_activos": [
+            {
+                "nombre": "Nicolas Cuadrado",
+                "total_accesos": 4,
+                "entradas": 2,
+                "salidas": 2,
+                "primer_acceso": "2025-10-25 00:57:33",
+                "ultimo_acceso": "2025-10-28 04:32:41",
+                "balance": 0
+            },
+            {
+                "nombre": "Maria Perez",
+                "total_accesos": 2,
+                "entradas": 2,
+                "salidas": 0,
+                "primer_acceso": "2025-10-25 00:57:33",
+                "ultimo_acceso": "2025-10-28 04:32:41",
+                "balance": 2
+            }
+        ],
+        "vecinos_por_frecuencia": [
+            {
+                "nombre": "Nicolas Cuadrado",
+                "total_accesos": 4,
+                "dias_activos": 2,
+                "accesos_por_dia": 2.0
+            },
+            {
+                "nombre": "Maria Perez",
+                "total_accesos": 2,
+                "dias_activos": 2,
+                "accesos_por_dia": 1.0
+            }
+        ],
+        "total_vecinos_con_accesos": 2
+    }
+}

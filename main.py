@@ -3,10 +3,6 @@ Sistema Barrio Seguro - Archivo Principal
 =========================================
 Sistema completo de reconocimiento facial para control de acceso a barrio privado.
 
-Autor: Sistema Barrio Seguro
-Fecha: 23/10/2025
-Versión: 1.0
-
 Características principales:
 - Reconocimiento facial en tiempo real
 - Registro de vecinos con captura desde cámara
@@ -28,8 +24,8 @@ try:
     from utils import configurar_logging, cargar_configuracion, obtener_info_sistema, verificar_camara
     from base_datos import BaseDatos
     from reconocimiento import SistemaReconocimiento
-    from registro_vecino import RegistroVecino, menu_registro_interactivo
-    from analisis_registros import AnalisisRegistros, menu_analisis
+    from registro_vecino import RegistroVecino
+    from analisis_registros import AnalisisRegistros
 except ImportError as e:
     print(f"❌ Error al importar módulos: {e}")
     print("🔧 Asegúrese de que todos los archivos estén en el directorio correcto.")
@@ -37,14 +33,10 @@ except ImportError as e:
 
 
 class SistemaBarrioSeguro:
-    """
-    Clase principal que coordina todos los módulos del sistema.
-    """
+    """Coordina todos los módulos del sistema."""
     
     def __init__(self):
-        """
-        Inicializa el sistema principal.
-        """
+        """Inicializa el sistema principal."""
         self.version = "1.0"
         self.db = None
         self.config = None
@@ -55,12 +47,7 @@ class SistemaBarrioSeguro:
         logging.info("Iniciando Sistema Barrio Seguro")
         
     def inicializar_sistema(self) -> bool:
-        """
-        Inicializa todos los componentes del sistema.
-        
-        Returns:
-            bool: True si se inicializó correctamente
-        """
+        """Inicializa la configuración, base de datos y verifica la cámara."""
         try:
             print("🔧 Inicializando sistema...")
             
@@ -86,9 +73,7 @@ class SistemaBarrioSeguro:
             return False
     
     def mostrar_bienvenida(self):
-        """
-        Muestra la pantalla de bienvenida del sistema.
-        """
+        """Muestra la pantalla de bienvenida del sistema."""
         os.system('cls' if os.name == 'nt' else 'clear')  # Limpiar pantalla
         
         print("🏠" + "="*78 + "🏠")
@@ -109,9 +94,7 @@ class SistemaBarrioSeguro:
         print("="*80)
     
     def mostrar_menu_principal(self):
-        """
-        Muestra el menú principal del sistema.
-        """
+        """Muestra el menú principal del sistema."""
         print(f"\n🏠 MENÚ PRINCIPAL - BARRIO SEGURO")
         print("="*50)
         print("1. 🎥 Iniciar reconocimiento facial")
@@ -123,9 +106,7 @@ class SistemaBarrioSeguro:
         print("="*50)
     
     def submenu_gestion_vecinos(self):
-        """
-        Submenú para gestión de vecinos.
-        """
+        """Submenú para gestión de vecinos."""
         while True:
             print(f"\n👤 GESTIÓN DE VECINOS")
             print("-"*40)
@@ -133,10 +114,9 @@ class SistemaBarrioSeguro:
             print("2. 📁 Registrar vecino (archivo)")
             print("3. 👥 Listar vecinos registrados")
             print("4. 🗑️  Eliminar vecino")
-            print("5. 🔄 Menú completo de registro")
-            print("6. ⬅️  Volver al menú principal")
+            print("5. ⬅️  Volver al menú principal")
             
-            opcion = input("\n🎯 Seleccione una opción (1-6): ").strip()
+            opcion = input("\n🎯 Seleccione una opción (1-5): ").strip()
             
             try:
                 registro = RegistroVecino(self.db)
@@ -175,10 +155,6 @@ class SistemaBarrioSeguro:
                         print("❌ Debe ingresar un nombre válido.")
                 
                 elif opcion == '5':
-                    print("🔄 Iniciando menú completo de registro...")
-                    menu_registro_interactivo()
-                
-                elif opcion == '6':
                     break
                 
                 else:
@@ -189,9 +165,7 @@ class SistemaBarrioSeguro:
                 print(f"❌ Error: {e}")
     
     def submenu_analisis(self):
-        """
-        Submenú para análisis y reportes.
-        """
+        """Submenú para análisis y reportes."""
         while True:
             print(f"\n📊 ANÁLISIS Y REPORTES")
             print("-"*40)
@@ -200,7 +174,7 @@ class SistemaBarrioSeguro:
             print("3. 📅 Análisis por días")
             print("4. 👥 Vecinos más activos")
             print("5. 💾 Generar reporte completo")
-            print("6. 🔧 Menú completo de análisis")
+            print("6. 🧹 Limpiar datos antiguos")
             print("7. ⬅️  Volver al menú principal")
             
             opcion = input("\n🎯 Seleccione una opción (1-7): ").strip()
@@ -263,9 +237,18 @@ class SistemaBarrioSeguro:
                         print(f"❌ {resultado['error']}")
                 
                 elif opcion == '6':
-                    print("🔧 Iniciando menú completo de análisis...")
-                    menu_analisis()
-                
+                    print("\n🧹 LIMPIAR DATOS ANTIGUOS")
+                    print("-"*40)
+                    dias = input("📅 Eliminar registros anteriores a cuántos días? (default 90): ").strip()
+                    try:
+                        dias = int(dias) if dias else 90
+                    except ValueError:
+                        dias = 90
+                    
+                    eliminados = analisis.limpiar_datos_antiguos(dias)
+                    if eliminados > 0:
+                        print(f"✅ Se eliminaron {eliminados} registros antiguos")
+                    
                 elif opcion == '7':
                     break
                 
@@ -277,9 +260,7 @@ class SistemaBarrioSeguro:
                 print(f"❌ Error: {e}")
     
     def submenu_configuracion(self):
-        """
-        Submenú para configuración del sistema.
-        """
+        """Submenú para configuración del sistema."""
         while True:
             print(f"\n⚙️ CONFIGURACIÓN DEL SISTEMA")
             print("-"*40)
@@ -368,9 +349,7 @@ class SistemaBarrioSeguro:
                 print("❌ Opción inválida. Intente nuevamente.")
     
     def mostrar_info_sistema(self):
-        """
-        Muestra información del sistema y diagnósticos.
-        """
+        """Muestra información del sistema y diagnósticos."""
         print("\nℹ️ INFORMACIÓN DEL SISTEMA")
         print("="*40)
         
@@ -415,9 +394,7 @@ class SistemaBarrioSeguro:
                 print(f"• {directorio}: No existe")
     
     def ejecutar(self):
-        """
-        Ejecuta el sistema principal con el menú interactivo.
-        """
+        """Ejecuta el loop principal del menú interactivo."""
         try:
             # Mostrar bienvenida
             self.mostrar_bienvenida()
@@ -492,9 +469,7 @@ class SistemaBarrioSeguro:
 
 
 def main():
-    """
-    Función principal del programa.
-    """
+    """Función principal del programa."""
     try:
         # Verificar Python y dependencias
         print("🔧 Verificando dependencias...")

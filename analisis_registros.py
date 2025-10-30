@@ -2,9 +2,6 @@
 Módulo de Análisis de Registros - Sistema Barrio Seguro
 =======================================================
 Sistema de análisis estadístico de accesos y generación de informes.
-
-Autor: Sistema Barrio Seguro
-Fecha: 23/10/2025
 """
 
 import sqlite3
@@ -20,26 +17,14 @@ from utils import configurar_logging, formatear_tiempo_transcurrido
 
 
 class AnalisisRegistros:
-    """
-    Clase para análisis estadístico de registros de acceso.
-    """
+    """Clase para análisis estadístico de registros de acceso."""
     
     def __init__(self, db: BaseDatos = None):
-        """
-        Inicializa el sistema de análisis.
-        
-        Args:
-            db (BaseDatos): Instancia de la base de datos
-        """
+        """Inicializa el sistema de análisis."""
         self.db = db or BaseDatos()
         
     def obtener_estadisticas_generales(self) -> Dict[str, Any]:
-        """
-        Obtiene estadísticas generales del sistema.
-        
-        Returns:
-            Dict: Estadísticas generales
-        """
+        """Obtiene estadísticas generales del sistema."""
         try:
             stats = self.db.obtener_estadisticas_accesos()
             
@@ -90,12 +75,7 @@ class AnalisisRegistros:
             return {}
     
     def analizar_horas_pico(self) -> Dict[str, Any]:
-        """
-        Analiza las horas con más y menos ingresos.
-        
-        Returns:
-            Dict: Análisis de horas pico
-        """
+        """Analiza las horas con más y menos accesos."""
         try:
             with sqlite3.connect(self.db.db_path) as conn:
                 cursor = conn.cursor()
@@ -163,15 +143,7 @@ class AnalisisRegistros:
             return {'error': str(e)}
     
     def analizar_visitas_por_dia(self, dias: int = 30) -> Dict[str, Any]:
-        """
-        Analiza la cantidad de visitas por día.
-        
-        Args:
-            dias (int): Número de días a analizar
-            
-        Returns:
-            Dict: Análisis de visitas por día
-        """
+        """Analiza la distribución de visitas por día."""
         try:
             with sqlite3.connect(self.db.db_path) as conn:
                 cursor = conn.cursor()
@@ -244,15 +216,7 @@ class AnalisisRegistros:
             return {'error': str(e)}
     
     def analizar_vecinos_mas_activos(self, limite: int = 10) -> Dict[str, Any]:
-        """
-        Analiza los vecinos con mayor frecuencia de entrada/salida.
-        
-        Args:
-            limite (int): Número máximo de vecinos a mostrar
-            
-        Returns:
-            Dict: Análisis de vecinos más activos
-        """
+        """Identifica los vecinos con más accesos registrados."""
         try:
             with sqlite3.connect(self.db.db_path) as conn:
                 cursor = conn.cursor()
@@ -325,15 +289,7 @@ class AnalisisRegistros:
             return {'error': str(e)}
     
     def generar_reporte_completo(self, archivo_salida: str = None) -> Dict[str, Any]:
-        """
-        Genera un reporte completo del sistema.
-        
-        Args:
-            archivo_salida (str): Ruta del archivo de salida (opcional)
-            
-        Returns:
-            Dict: Reporte completo
-        """
+        """Genera un reporte completo del sistema."""
         try:
             print("📊 Generando reporte completo...")
             
@@ -372,9 +328,7 @@ class AnalisisRegistros:
             return {'error': str(e)}
     
     def mostrar_reporte_consola(self):
-        """
-        Muestra un reporte formateado en la consola.
-        """
+        """Muestra un reporte completo en consola."""
         try:
             print("\n" + "="*80)
             print("📊 REPORTE DE ANÁLISIS - SISTEMA BARRIO SEGURO")
@@ -450,15 +404,7 @@ class AnalisisRegistros:
             print(f"❌ Error al generar reporte: {e}")
     
     def limpiar_datos_antiguos(self, dias_limite: int = 90) -> int:
-        """
-        Limpia registros de acceso más antiguos que el límite especificado.
-        
-        Args:
-            dias_limite (int): Días después de los cuales eliminar registros
-            
-        Returns:
-            int: Número de registros eliminados
-        """
+        """Elimina registros de accesos más antiguos que el límite especificado."""
         try:
             with sqlite3.connect(self.db.db_path) as conn:
                 cursor = conn.cursor()

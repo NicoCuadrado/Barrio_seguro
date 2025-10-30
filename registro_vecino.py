@@ -2,9 +2,6 @@
 Módulo de Registro de Vecinos - Sistema Barrio Seguro
 ====================================================
 Módulo para registrar nuevos vecinos con captura de foto y codificación facial.
-
-Autor: Sistema Barrio Seguro
-Fecha: 23/10/2025
 """
 
 import cv2
@@ -23,31 +20,16 @@ from utils import (
 
 
 class RegistroVecino:
-    """
-    Clase para manejar el registro de nuevos vecinos.
-    """
+    """Maneja el registro de nuevos vecinos en el sistema."""
     
     def __init__(self, db: BaseDatos):
-        """
-        Inicializa el sistema de registro.
-        
-        Args:
-            db (BaseDatos): Instancia de la base de datos
-        """
+        """Inicializa el sistema de registro."""
         self.db = db
         self.directorio_vecinos = "dataset/vecinos"
         crear_directorio_si_no_existe(self.directorio_vecinos)
         
     def registrar_desde_camara(self, nombre: str) -> bool:
-        """
-        Registra un vecino capturando su foto desde la cámara.
-        
-        Args:
-            nombre (str): Nombre del vecino
-            
-        Returns:
-            bool: True si se registró exitosamente
-        """
+        """Registra un vecino capturando su foto desde la cámara."""
         try:
             logging.info(f"Iniciando registro desde cámara para: {nombre}")
             
@@ -149,16 +131,7 @@ class RegistroVecino:
             return False
     
     def registrar_desde_archivo(self, nombre: str, ruta_imagen: str) -> bool:
-        """
-        Registra un vecino desde un archivo de imagen.
-        
-        Args:
-            nombre (str): Nombre del vecino
-            ruta_imagen (str): Ruta al archivo de imagen
-            
-        Returns:
-            bool: True si se registró exitosamente
-        """
+        """Registra un vecino desde un archivo de imagen existente."""
         try:
             logging.info(f"Iniciando registro desde archivo para: {nombre}")
             
@@ -194,17 +167,7 @@ class RegistroVecino:
     
     def _procesar_y_guardar_vecino(self, nombre: str, imagen: np.ndarray, 
                                   ruta_origen: str = None) -> bool:
-        """
-        Procesa la imagen y guarda el vecino en la base de datos.
-        
-        Args:
-            nombre (str): Nombre del vecino
-            imagen (np.ndarray): Imagen del vecino
-            ruta_origen (str): Ruta de origen si viene de archivo
-            
-        Returns:
-            bool: True si se procesó exitosamente
-        """
+        """Procesa la imagen y guarda el vecino en la base de datos."""
         try:
             print("🔍 Procesando imagen...")
             
@@ -255,15 +218,7 @@ class RegistroVecino:
             return False
     
     def mostrar_preview_imagen(self, ruta_imagen: str) -> bool:
-        """
-        Muestra un preview de la imagen antes de registrar.
-        
-        Args:
-            ruta_imagen (str): Ruta de la imagen
-            
-        Returns:
-            bool: True si el usuario confirma el registro
-        """
+        """Muestra un preview de la imagen antes de confirmar el registro."""
         try:
             if not validar_imagen(ruta_imagen):
                 print(f"❌ Imagen inválida: {ruta_imagen}")
@@ -323,9 +278,7 @@ class RegistroVecino:
             return False
     
     def listar_vecinos_registrados(self):
-        """
-        Lista todos los vecinos registrados en el sistema.
-        """
+        """Lista todos los vecinos registrados en el sistema."""
         try:
             vecinos = self.db.obtener_vecinos_activos()
             
@@ -356,15 +309,7 @@ class RegistroVecino:
             print(f"❌ Error al obtener lista de vecinos: {e}")
     
     def eliminar_vecino(self, nombre: str) -> bool:
-        """
-        Elimina un vecino del sistema.
-        
-        Args:
-            nombre (str): Nombre del vecino a eliminar
-            
-        Returns:
-            bool: True si se eliminó exitosamente
-        """
+        """Desactiva un vecino del sistema manteniendo su historial."""
         try:
             # Verificar si el vecino existe
             vecino = self.db.buscar_vecino_por_nombre(nombre)
@@ -398,9 +343,7 @@ class RegistroVecino:
 
 
 def menu_registro_interactivo():
-    """
-    Menú interactivo para registro de vecinos.
-    """
+    """Menú interactivo para gestionar el registro de vecinos."""
     try:
         # Configurar logging
         from utils import configurar_logging

@@ -2,9 +2,6 @@
 Utilidades para el Sistema Barrio Seguro
 ========================================
 Módulo con funciones auxiliares, configuración de logs y constantes del sistema.
-
-Autor: Sistema Barrio Seguro
-Fecha: 23/10/2025
 """
 
 import os
@@ -35,12 +32,7 @@ LOG_FILE = 'registros/sistema.log'
 
 
 def configurar_logging(nivel_log: str = "INFO"):
-    """
-    Configura el sistema de logging.
-    
-    Args:
-        nivel_log (str): Nivel de logging (DEBUG, INFO, WARNING, ERROR)
-    """
+    """Configura el sistema de logging."""
     # Crear directorio de logs si no existe
     os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
     
@@ -58,15 +50,7 @@ def configurar_logging(nivel_log: str = "INFO"):
 
 
 def validar_imagen(ruta_imagen: str) -> bool:
-    """
-    Valida si un archivo es una imagen válida.
-    
-    Args:
-        ruta_imagen (str): Ruta al archivo de imagen
-        
-    Returns:
-        bool: True si es una imagen válida
-    """
+    """Valida si un archivo es una imagen válida y puede ser cargada."""
     try:
         if not os.path.exists(ruta_imagen):
             return False
@@ -88,15 +72,7 @@ def validar_imagen(ruta_imagen: str) -> bool:
 
 
 def obtener_codificacion_facial(imagen) -> Optional[np.ndarray]:
-    """
-    Obtiene la codificación facial de una imagen.
-    
-    Args:
-        imagen: Imagen de OpenCV
-        
-    Returns:
-        Optional[np.ndarray]: Codificación facial o None si no se encuentra cara
-    """
+    """Extrae la codificación facial de una imagen."""
     try:
         # Convertir a RGB
         rgb_imagen = cv2.cvtColor(imagen, cv2.COLOR_BGR2RGB)
@@ -124,16 +100,7 @@ def obtener_codificacion_facial(imagen) -> Optional[np.ndarray]:
 
 def comparar_caras(codificacion_conocida: np.ndarray, 
                   codificacion_nueva: np.ndarray) -> Tuple[bool, float]:
-    """
-    Compara dos codificaciones faciales.
-    
-    Args:
-        codificacion_conocida: Codificación facial conocida
-        codificacion_nueva: Nueva codificación facial a comparar
-        
-    Returns:
-        Tuple[bool, float]: (es_coincidencia, distancia)
-    """
+    """Compara dos codificaciones faciales y retorna si coinciden y su distancia."""
     try:
         # Calcular distancia
         distancia = fr.face_distance([codificacion_conocida], codificacion_nueva)[0]
@@ -149,16 +116,7 @@ def comparar_caras(codificacion_conocida: np.ndarray,
 
 
 def redimensionar_imagen(imagen, ancho_max: int = 800) -> np.ndarray:
-    """
-    Redimensiona una imagen manteniendo la proporción.
-    
-    Args:
-        imagen: Imagen de OpenCV
-        ancho_max (int): Ancho máximo de la imagen
-        
-    Returns:
-        np.ndarray: Imagen redimensionada
-    """
+    """Redimensiona una imagen manteniendo la proporción de aspecto."""
     try:
         alto, ancho = imagen.shape[:2]
         
@@ -178,24 +136,13 @@ def redimensionar_imagen(imagen, ancho_max: int = 800) -> np.ndarray:
 
 
 def generar_nombre_archivo_visita() -> str:
-    """
-    Genera un nombre único para archivo de visita.
-    
-    Returns:
-        str: Nombre del archivo
-    """
+    """Genera un nombre único basado en timestamp para archivos de visita."""
     timestamp = datetime.now().strftime(FORMATO_FECHA_ARCHIVO)
     return f"visita_{timestamp}.jpg"
 
 
 def limpiar_archivos_visitas_antiguas(directorio_visitas: str, dias_limite: int = 7):
-    """
-    Limpia archivos de visitas más antiguos que el límite especificado.
-    
-    Args:
-        directorio_visitas (str): Directorio de archivos de visitas
-        dias_limite (int): Días después de los cuales eliminar archivos
-    """
+    """Elimina archivos de visitas más antiguos que el límite especificado."""
     try:
         if not os.path.exists(directorio_visitas):
             return
@@ -223,16 +170,7 @@ def limpiar_archivos_visitas_antiguas(directorio_visitas: str, dias_limite: int 
 
 def dibujar_rectangulo_cara(imagen, ubicacion_cara: Tuple, nombre: str, 
                            es_vecino: bool = True, distancia: float = 0.0):
-    """
-    Dibuja un rectángulo alrededor de una cara detectada con información.
-    
-    Args:
-        imagen: Imagen de OpenCV
-        ubicacion_cara: Tupla con coordenadas (top, right, bottom, left)
-        nombre (str): Nombre de la persona
-        es_vecino (bool): True si es vecino, False si es visita
-        distancia (float): Distancia de la comparación facial
-    """
+    """Dibuja un rectángulo alrededor de una cara con su nombre y datos."""
     try:
         top, right, bottom, left = ubicacion_cara
         
@@ -267,15 +205,7 @@ def dibujar_rectangulo_cara(imagen, ubicacion_cara: Tuple, nombre: str,
 
 
 def cargar_configuracion(archivo_config: str = "config.json") -> dict:
-    """
-    Carga configuración desde archivo JSON.
-    
-    Args:
-        archivo_config (str): Ruta al archivo de configuración
-        
-    Returns:
-        dict: Diccionario con configuración
-    """
+    """Carga la configuración desde archivo JSON o crea una por defecto."""
     configuracion_default = {
         "tolerancia_reconocimiento": TOLERANCIA_RECONOCIMIENTO,
         "tiempo_visita_minutos": TIEMPO_VISITA_MINUTOS,
@@ -305,13 +235,7 @@ def cargar_configuracion(archivo_config: str = "config.json") -> dict:
 
 
 def guardar_configuracion(config: dict, archivo_config: str = "config.json"):
-    """
-    Guarda configuración en archivo JSON.
-    
-    Args:
-        config (dict): Diccionario con configuración
-        archivo_config (str): Ruta al archivo de configuración
-    """
+    """Guarda la configuración en archivo JSON."""
     try:
         with open(archivo_config, 'w', encoding='utf-8') as f:
             json.dump(config, f, indent=4, ensure_ascii=False)
@@ -322,15 +246,7 @@ def guardar_configuracion(config: dict, archivo_config: str = "config.json"):
 
 
 def verificar_camara(indice_camara: int = 0) -> bool:
-    """
-    Verifica si la cámara está disponible.
-    
-    Args:
-        indice_camara (int): Índice de la cámara
-        
-    Returns:
-        bool: True si la cámara está disponible
-    """
+    """Verifica si la cámara está disponible y funcionando."""
     try:
         captura = cv2.VideoCapture(indice_camara)
         if not captura.isOpened():
@@ -348,15 +264,7 @@ def verificar_camara(indice_camara: int = 0) -> bool:
 
 
 def formatear_tiempo_transcurrido(inicio: datetime) -> str:
-    """
-    Formatea el tiempo transcurrido desde un momento dado.
-    
-    Args:
-        inicio (datetime): Momento de inicio
-        
-    Returns:
-        str: Tiempo transcurrido formateado
-    """
+    """Formatea el tiempo transcurrido en formato legible (Xh Ym Zs)."""
     try:
         transcurrido = datetime.now() - inicio
         
@@ -377,12 +285,7 @@ def formatear_tiempo_transcurrido(inicio: datetime) -> str:
 
 
 def crear_directorio_si_no_existe(directorio: str):
-    """
-    Crea un directorio si no existe.
-    
-    Args:
-        directorio (str): Ruta del directorio
-    """
+    """Crea un directorio si no existe."""
     try:
         os.makedirs(directorio, exist_ok=True)
     except Exception as e:
@@ -390,12 +293,7 @@ def crear_directorio_si_no_existe(directorio: str):
 
 
 def obtener_info_sistema() -> dict:
-    """
-    Obtiene información del sistema para diagnóstico.
-    
-    Returns:
-        dict: Información del sistema
-    """
+    """Obtiene información del sistema para diagnóstico."""
     info = {
         "opencv_version": cv2.__version__,
         "python_version": os.sys.version,
